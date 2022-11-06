@@ -6,11 +6,13 @@ import com.slama.orderservice.model.OrderLineItems;
 import com.slama.orderservice.model.mapper.OrderLineItemsDtoToOrderLineItemsMapper;
 import com.slama.orderservice.repository.OrderRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@Transactional
 public record OrderService(
         OrderLineItemsDtoToOrderLineItemsMapper orderLineItemsDtoToOrderLineItemsMapper,
         OrderRepository orderRepository
